@@ -19,8 +19,8 @@ public class ShortenService {
         this.shortenRepository = shortenRepository;
     }
 
-    public String createShorten(String points){
-        Shorten saved = shortenRepository.save(new Shorten(points));
+    public String createShorten(Shorten shorten){
+        Shorten saved = shortenRepository.save(shorten);
         return saved.getShorten();
     }
 

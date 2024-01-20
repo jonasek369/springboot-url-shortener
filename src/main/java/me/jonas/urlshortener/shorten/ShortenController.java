@@ -17,11 +17,8 @@ public class ShortenController {
     }
 
     @PostMapping("/create")
-    public String createShorten(@RequestBody Map<String, String> payload){
-        if(!payload.containsKey("points")){
-            return "error";
-        }
-        return shortenService.createShorten(payload.get("points"));
+    public String createShorten(@RequestBody Shorten payload){
+        return shortenService.createShorten(payload);
     }
 
     @GetMapping("/{shorten}")
